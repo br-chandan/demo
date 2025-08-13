@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= name
+    link(rel='stylesheet', href='/style.css')
+  body
+    h1= name
+    img(src='/assets/dish.jpg', alt='dish', width='300')
+    h2 Ingredients
+    ul
+      each ing in ingredients
+        li(style='color: green; font-weight: bold')= ing
+    h2 Steps
+    ol
+      each step in steps
+        li= step
