@@ -1,0 +1,221 @@
+1.
+import React from 'react';
+
+function VehicleCard() {
+  const vehicles = [
+    { model: 'Model S', manufacturer: 'Tesla', year: 2022, fuel: 'Electric' },
+    { model: 'Civic', manufacturer: 'Honda', year: 2021, fuel: 'Petrol' },
+    { model: 'Corolla', manufacturer: 'Toyota', year: 2020, fuel: 'Diesel' },
+    { model: 'Mustang', manufacturer: 'Ford', year: 2019, fuel: 'Petrol' },
+    { model: 'X5', manufacturer: 'BMW', year: 2023, fuel: 'Hybrid' },
+  ];
+
+  const cardStyle = {
+    border: '1px solid black',
+    borderRadius: '10px',
+    padding: '10px',
+    margin: '10px',
+    width: '180px',
+    textAlign: 'center',
+  };
+
+  const containerStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    
+  };
+
+  return (
+    <div style={containerStyle}>
+      {vehicles.map((v, i) => (
+        <div key={i} style={cardStyle}>
+          <h3>{v.model}</h3>
+          <p><b>Maker:</b> {v.manufacturer}</p>
+          <p><b>Year:</b> {v.year}</p>
+          <p><b>Fuel:</b> {v.fuel}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default VehicleCard;
+
+2.
+import React from 'react';
+import './2.css';
+
+function CountryList() {
+  const countries = [
+    { name: 'India', capital: 'New Delhi' },
+    { name: 'USA', capital: 'Washington, D.C.' },
+    { name: 'France', capital: 'Paris' },
+    { name: 'Japan', capital: 'Tokyo' },
+    { name: 'Australia', capital: 'Canberra' },
+  ];
+
+  return (
+    <ul className="country-list">
+      {countries.map((c, i) => (
+        <li key={i} className="country-item">
+          <strong>{c.name}</strong> - {c.capital}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export default CountryList;
+
+3.
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+class CourseCard extends Component {
+  render() {
+    const { title, duration, instructor } = this.props;
+    return (
+      <div style={{
+        border: '3px solid #ccc',
+        padding: '15px',
+        width: '250px',
+        borderRadius: '8px',
+        margin: '10px'
+      }}>
+        <h3>{title}</h3>
+        <p><b>Duration:</b> {duration} weeks</p>
+        <p><b>Instructor:</b> {instructor}</p>
+      </div>
+    );
+  }
+}
+
+CourseCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  duration: PropTypes.number.isRequired,
+  instructor: PropTypes.string.isRequired,
+};
+
+export default CourseCard;
+
+4.
+import React, { Component } from 'react';
+
+class RestaurantList extends Component {
+  render() {
+    const restaurants = [
+      {
+        name: 'Pizza Place',
+        menu: ['Margherita', 'Pepperoni', 'Veggie']
+      },
+      {
+        name: 'Burger House',
+        menu: ['Cheeseburger', 'Veg Burger', 'Fries']
+      },
+      {
+        name: 'Curry Corner',
+        menu: ['Butter Chicken', 'Paneer Tikka', 'Naan']
+      }
+    ];
+
+    return (
+  <div>
+    {restaurants.map((r, i) => (
+      <div key={i}>
+        <h3>{r.name}</h3>
+        <ul>
+          {r.menu.map((m, j) => <li key={j}>{m}</li>)}
+        </ul>
+      </div>
+    ))}
+  </div>
+);
+
+  }
+}
+
+export default RestaurantList;
+
+5.
+import React from 'react';
+import PropTypes from 'prop-types';
+
+function CompanyInfo({ name, industry, employees }) {
+  return (
+    <div>
+      <h2>{name}</h2>
+      <p>Industry: {industry}</p>
+      <p>Employees: {employees}</p>
+    </div>
+  );
+}
+
+CompanyInfo.propTypes = {
+  name: PropTypes.string.isRequired,
+  industry: PropTypes.string.isRequired,
+  employees: PropTypes.number.isRequired,
+};
+
+export default CompanyInfo;
+
+8.
+import React, { useState } from 'react';
+
+function UserStatusSwitcher() {
+  const [isOnline, setIsOnline] = useState(false);
+
+  const toggleStatus = () => {
+    setIsOnline((prev) => !prev);
+  };
+
+  return (
+    <div>
+      <h3 style={{ color: isOnline ? 'green' : 'red' }}>
+        {isOnline ? 'Online' : 'Offline'}
+      </h3>
+      <button onClick={toggleStatus}>
+        {isOnline ? 'Go Offline' : 'Go Online'}
+      </button>
+    </div>
+  );
+}
+
+export default UserStatusSwitcher;
+
+10.
+
+import { useState } from "react";
+import './10.css';
+
+function FeedbackPoll(){
+
+    const [rate,setrate]= useState("")
+    const [rateSubmit,setrateSubmit]= useState(false)
+
+    const hSubmit=()=>{
+        setrateSubmit(true)
+    }
+    return(
+        <div className="Feed-main">
+            {!rateSubmit?
+                (
+                    <form onSubmit={hSubmit} className="Feed-form">
+                        <h4>How would you rate our tech support?</h4>
+                        <p>
+                            <button className="good" type="submit" onClick={()=>setrate("Good")}>Good</button>
+                            <button className="neutral"  type="submit" onClick={()=>setrate("Nuetral")}>Nuetral</button>
+                            <button className="poor" type="submit" onClick={()=>setrate("Poor")}>Poor</button>
+                        </p>
+                    </form>
+                )
+                :
+                <div>
+                    <p>Your Rating: {rate}  </p><br />
+                    <p>Thank For Rating Us</p>
+                </div>
+            }
+        </div>
+    )
+}
+
+export default FeedbackPoll;

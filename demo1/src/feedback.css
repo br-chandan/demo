@@ -1,0 +1,31 @@
+
+.good{
+    background-color: green;
+    margin: 10px;
+}
+.neutral{
+    background-color: yellow;
+    margin: 10px;
+}
+.poor{
+    background-color: red;
+    margin: 10px;
+}
+
+body{
+  background-color: rgb(255, 252, 240);
+}
+.Feed-main{
+  padding: 20px;
+  margin: 20px;
+  background-color: rgb(247, 223, 191);
+  border: 5px;
+  
+
+}
+
+.Feed-form{
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}

@@ -1,0 +1,15 @@
+/* .country-list {
+  list-style: none;
+  padding: 0;
+  max-width: 300px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+} */
+
+.country-item {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}

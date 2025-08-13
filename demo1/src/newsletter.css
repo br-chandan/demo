@@ -1,0 +1,20 @@
+.box {
+  width: 250px;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+input, button {
+  display: block;
+  width: 90%;
+  margin: 8px auto;
+  padding: 6px;
+  background-color: aqua;
+}
+
+button:hover {
+  background-color: #eee;
+  background-color: rgb(74, 74, 202);
+}
