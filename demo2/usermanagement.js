@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.use(express.json()); /
+app.use(express.json()); 
 
 
 let users = [];
@@ -37,3 +37,4 @@ app.delete('/users/:id', (req, res) => {
 app.listen(port, () => {
   console.log(`User Management App running at http://localhost:${port}`);
 });
+
